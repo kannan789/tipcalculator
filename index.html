@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator</title>
+</head>
+<body style="background-color: cornsilk;">
+    <h1 style="padding:20px;margin:-8px -8px 20px -8px;background-color: blueviolet;">Tip Calculator</h1>
+
+    <label>Enter the Bill amount</label>
+    <input type="number" style="border: 2px solid black;" id="bill_amt"><br><br>
+    <label>Enter the Tip percent</label>
+    <input type="number" style="border:2px solid black;" id="tip_per"><br><br>
+    <button id="but" type="button" style="background-color: darkgoldenrod;padding:10px;margin-left: 75px;" onclick="calc()"; >Calculate Tip</button>
+
+    <br>
+    <h1 id="text1"></h1>
+    <h1 id="text2"></h1>
+
+ <script>
+
+function calc(){
+        var billAmt=document.getElementById("bill_amt");
+        billAmt=Number(billAmt.value);
+        var tipPer=document.getElementById("tip_per");
+        tipPer=tipPer.value;
+        exPer=tipPer/100;
+        var tipOnly= billAmt*exPer;
+        tipOnly=Number(tipOnly);
+        var totalBill=billAmt+tipOnly;
+        totalBill=Number(totalBill);
+    
+
+       
+            var billDis=document.getElementById("text1");
+            billDis.innerHTML="The total Bill amount is:Rs." + totalBill;
+            var billTip=document.getElementById("text2");
+            billTip.innerHTML="The tip amount is:Rs." + tipOnly;
+        }
+</script> 
+</body>
+</html>
